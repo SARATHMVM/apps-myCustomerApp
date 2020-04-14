@@ -1,82 +1,149 @@
-[
-    {
-      "id": 1,
-      "name": "Leanne Graham",
-      "sex" : "male",
-      "address": {
-        "street": "Kulas Light",
-        "suite": "Apt. 556",
-        "city": "Gwenborough",
-        "zipcode": "92998-3874",
-        "geo": {
-          "lat": "-37.3159",
-          "lng": "81.1496"
-        }
-      },
-      "phone": "1-770-736-8031 x56442"
-    },
-    {
-      "id": 2,
-      "name": "Ervin Howell",
-      "sex":"male",
-      "address": {
-        "street": "Victor Plains",
-        "suite": "Suite 879",
-        "city": "Wisokyburgh",
-        "zipcode": "90566-7771",
-        "geo": {
-          "lat": "-43.9509",
-          "lng": "-34.4618"
-        }
-      },
-      "phone": "010-692-6593 x09125"
-    },
-    {
-      "id": 3,
-      "name": "Clementine Bauch",
-      "sex":"female",
-      "address": {
-        "street": "Douglas Extension",
-        "suite": "Suite 847",
-        "city": "McKenziehaven",
-        "zipcode": "59590-4157",
-        "geo": {
-          "lat": "-68.6102",
-          "lng": "-47.0653"
-        }
-      },
-      "phone": "1-463-123-4447"
-    },
-    {
-      "id": 4,
-      "name": "Patricia Lebsack",
-      "sex":"male",
-      "address": {
-        "street": "Hoeger Mall",
-        "suite": "Apt. 692",
-        "city": "South Elvis",
-        "zipcode": "53919-4257",
-        "geo": {
-          "lat": "29.4572",
-          "lng": "-164.2990"
-        }
-      },
-      "phone": "493-170-9623 x156"
-    },
-    {
-      "id": 5,
-      "name": "Chelsey Dietrich",
-      "sex":"female",
-      "address": {
-        "street": "Skiles Walks",
-        "suite": "Suite 351",
-        "city": "Roscoeview",
-        "zipcode": "33263",
-        "geo": {
-          "lat": "-31.8129",
-          "lng": "62.5342"
-        }
-      },
-      "phone": "(254)954-1289"
-    }
-  ]
+[{
+  "id": 1,
+"name": "Leanne Graham",
+"sex": "male",
+"address": [{
+    "addressCountry": "Canada",
+    "addressLocality": "City",
+    "addressRegion": "Province ",
+    "postalCode": "565665",
+    "streetAddress": "Box 123 12345 - 123 Street NW"
+  },
+  {
+    "addressCountry": "United States",
+    "addressLocality": "City",
+    "addressRegion": "States",
+    "postalCode": "123465",
+    "postOfficeBoxNumber": "1234",
+    "streetAddress": "NewJersy Road"
+  }
+],
+"phone": "8848484848"
+},
+{
+"id": 2,
+"name": "Ervin Howell",
+"sex": "male",
+"address": [{
+  "addressCountry": "India",
+  "addressLocality": "City",
+  "addressRegion": "Bangalore ",
+  "postalCode": "645465",
+  "streetAddress": "Marathahalli"
+}],
+"phone": "6358929082"
+},
+{
+"id": 3,
+"name": "Clementine Bauch",
+"sex": "female",
+"address": [{
+  "addressCountry": "UK",
+  "addressLocality": "Rural",
+  "addressRegion": "Dublin ",
+  "postalCode": "232432",
+  "streetAddress": "Pink street"
+}],
+"phone": "9354447213"
+},
+{
+"id": 4,
+"name": "Patricia Lebsack",
+"sex": "male",
+"address": [{
+  "addressCountry": "India",
+  "addressLocality": "City",
+  "addressRegion": "Bangalore",
+  "postalCode": "625530",
+  "streetAddress": "ITPL"
+}],
+"phone": "9623156000"
+},
+{
+"id": 5,
+"name": "Chelsey Dietrich",
+"sex": "female",
+"address": [{
+  "addressCountry": "Vegas",
+  "addressLocality": "City",
+  "addressRegion": "Los",
+  "postalCode": "999999",
+  "streetAddress": "Beach view restaraunt"
+}],
+"phone": "9541289213"
+},
+{
+  "id": 6,
+"name": "Ankita",
+"sex": "female",
+"address": [{
+    "addressCountry": "Bangok",
+    "addressLocality": "City",
+    "addressRegion": "MallRoad",
+    "postalCode": "565665",
+    "streetAddress": "Beach Resort"
+  },
+  {
+    "addressCountry": "United States",
+    "addressLocality": "City",
+    "addressRegion": "States",
+    "postalCode": "123465",
+    "postOfficeBoxNumber": "1234",
+    "streetAddress": "NewJersy Road"
+  }
+],
+"phone": "9757847833"
+},
+{
+"id": 7,
+"name": "Edwardo",
+"sex": "male",
+"address": [{
+  "addressCountry": "India",
+  "addressLocality": "City",
+  "addressRegion": "Bangalore ",
+  "postalCode": "645465",
+  "streetAddress": "Richmond"
+}],
+"phone": "6920912523"
+},
+{
+"id": 8,
+"name": "Shaily",
+"sex": "female",
+"address": [{
+  "addressCountry": "UK",
+  "addressLocality": "Rural",
+  "addressRegion": "Dublin ",
+  "postalCode": "232432",
+  "streetAddress": "Pink street"
+}],
+"phone": "9354634447"
+},
+{
+"id": 9,
+"name": "Sarwan",
+"sex": "male",
+"address": [{
+  "addressCountry": "India",
+  "addressLocality": "City",
+  "addressRegion": "Bangalore",
+  "postalCode": "625530",
+  "streetAddress": "ITPL"
+}],
+"phone": "9493170156"
+},
+{
+"id": 10,
+"name": "Yuvaraj",
+"sex": "male",
+"address": [{
+  "addressCountry": "Vegas",
+  "addressLocality": "City",
+  "addressRegion": "Los",
+  "postalCode": "999999",
+  "streetAddress": "Beach view restaraunt"
+}],
+"phone": "9541289234"
+}
+]
