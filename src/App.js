@@ -1,41 +1,31 @@
 import React from 'react';
 import './App.css';
+import updateAddress from './Action'
+import {connect} from 'react-redux';
 
+let address;
+let customerDetails;
 class App extends React.Component {
-  constructor(props)
-  {
-    super(props);
-    this.state = {
-      loading : true,
-      tasks : [],
-      address : [],
-      addressFlag : true
-    }
-  }
+
   async componentDidMount()
   {
     try{
       const url = "http://www.mocky.io/v2/5e956d902f00002a0002502d";
       const response = await fetch(url);
-      const tasks = await response.json();
-      console.log(tasks);
-      this.setState({tasks:tasks,loading:false})
+      const customerDetails = await response.json();
+      console.log(customerDetails);
+      this.props.updatecustomerDetails(customerDetails);
     }
     catch(e){
       console.log("Error while fetching",e);
     }
   }
 
-  updateAddress(address) {
-    this.setState({
-      address: address,
-      addressFlag : false
-    });
-   }
+
 
 fetchCustomerAddress(){
-  if(this.state.address && this.state.address.length>0){
-    return this.state.address.map((addressValue, index) => {
+  if(this.props.address && this.props.address.length>0){
+    return this.props.address.map((addressValue, index) => {
     {
       const { addressCountry, addressLocality, addressRegion, postalCode , streetAddress} = addressValue
         return(
@@ -52,15 +42,16 @@ fetchCustomerAddress(){
   )}
   else
   {
-    return <div>customer selected does not any address</div>
+    return <div>customer selected does not have any address</div>
   }
   }
 
+
   renderTableData() {
-    return this.state.tasks.map((customer, index) => {
+    return this.props.customerDetails.map((customer, index) => {
        const { id, name, sex, phone , address} = customer
-       return (
-          <tr key={index} onClick={this.updateAddress.bind(this,address)}>
+       return ( 
+         <tr key={index} onClick = {this.props.updateAddress.bind(this,address)}>
              <td>{id}</td>
              <td>{name}</td>
              <td>{sex}</td>
@@ -75,7 +66,7 @@ fetchCustomerAddress(){
       <table>
       <div className="tableHeading">All customer details:</div>
         <table id='customers' className="customerTable"> 
-        { this.state.loading ? null :<thead className="customerBody">
+        { this.props.loading ? null :<thead className="customerBody">
                    <tr>
                        <th>ID</th>
                        <th>NAME</th>  
@@ -86,17 +77,17 @@ fetchCustomerAddress(){
         }
         <tbody className="customerBody">
 
-           { this.state.loading ? <div>...loading</div>: 
+           { this.props.loading ? <div>...loading</div>: 
 
            this.renderTableData()
            
            }
         </tbody>
-      </table>  
+      </table> 
       <div className="tableHeading">Specific customer address:</div>
       <table id='adress' className="addressTable">
       <thead className="customerBody">
-      { this.state.addressFlag ? null:
+      { this.props.addressFlag ? null:
                    <tr>
                        <th>addressCountry</th>
                        <th>addressLocality</th>
@@ -106,7 +97,7 @@ fetchCustomerAddress(){
                    </tr>}
         </thead>
         <tbody className="addressBody">
-           { this.state.addressFlag ? <div>...Click on Specific customer to get the address</div>: this.fetchCustomerAddress()}
+           { this.props.addressFlag ? <div>...Click on Specific customer to get the address</div>: this.fetchCustomerAddress()}
         </tbody>
         </table>
       </table>
@@ -114,4 +105,19 @@ fetchCustomerAddress(){
   } 
 }
 
-export default App;
+const mapStateToProps =(state) => {
+  return {
+    loading: state.loading,
+    customerDetails : state.customerDetails,
+    address : state.address,
+    addressFlag : state.addressFlag
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    updateAddress: (address) => dispatch({type:'UPDATEADDRESS',value:address}),
+    updatecustomerDetails: (customerDetails) => dispatch({type:'UPDATECUSTOMERDETAILS',value:customerDetails})
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
